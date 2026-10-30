@@ -1,0 +1,6 @@
+{
+  "buildCommand": "cd shopco && npm install --legacy-peer-deps && npm run build",
+  "outputDirectory": "shopco/.next",
+  "installCommand": "cd shopco && npm install --legacy-peer-deps",
+  "framework": "nextjs"
+}
