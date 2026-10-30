@@ -9,4 +9,6 @@ services:
       - key: NEXT_PUBLIC_SHOPLENS_API
         value: https://shoplens-2.onrender.com
       - key: NODE_VERSION
-        value: 18.20.0
+        value: "18.20.0"
+      - key: PORT
+        value: "3000"
