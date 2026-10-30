@@ -65,10 +65,13 @@ export default function TryOnModal({ productName, productImageUrl, onClose }: Pr
   // Convert image URL to base64 — with CORS fallback
   // If browser can't fetch (CORS blocked), returns null so we send URL instead
   async function urlToBase64Safe(url: string): Promise<string | null> {
-    // For local /images/ paths, just return null — backend can't fetch those anyway
-    if (url.startsWith("/")) return null;
+    // For local /images/ paths, build full URL using window.location.origin
+    const fullUrl = url.startsWith("/")
+      ? `${window.location.origin}${url}`
+      : url;
+
     try {
-      const res = await fetch(url, { mode: "cors" });
+      const res = await fetch(fullUrl, { mode: "cors" });
       if (!res.ok) return null;
       const blob = await res.blob();
       return new Promise((resolve) => {

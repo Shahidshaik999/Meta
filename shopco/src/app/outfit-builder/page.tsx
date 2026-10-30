@@ -46,7 +46,8 @@ export default function OutfitBuilderPage() {
   });
 
   async function urlToBase64(url: string): Promise<string> {
-    const res = await fetch(url);
+    const fullUrl = url.startsWith("/") ? `${window.location.origin}${url}` : url;
+    const res = await fetch(fullUrl);
     const blob = await res.blob();
     return new Promise(resolve => {
       const r = new FileReader();
