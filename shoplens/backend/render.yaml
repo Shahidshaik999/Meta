@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: shoplens-api
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: META_API_KEY
+        sync: false
+      - key: META_API_BASE_URL
+        value: https://api.meta.ai/v1
+      - key: VISION_MODEL
+        value: muse-spark-1.3
+      - key: WONDER_MODEL
+        value: muse-wonder-1.0
+      - key: IMAGE_MODEL
+        value: muse-image-1.0
+      - key: SAM_MODEL
+        value: sam-3.1
+    healthCheckPath: /health
