@@ -5,7 +5,7 @@ import Link from "next/link";
 import { getProducts } from "@/lib/productStore";
 import { Product } from "@/types/product.types";
 
-const API = process.env.NEXT_PUBLIC_SHOPLENS_API || "http://localhost:8000";
+const API = process.env.NEXT_PUBLIC_SHOPLENS_API || "http://meta-1-x9qz.onrender.com";
 
 interface Message {
   role: "user" | "assistant";

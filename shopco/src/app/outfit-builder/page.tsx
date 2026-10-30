@@ -6,7 +6,7 @@ import { useDropzone } from "react-dropzone";
 import { getProducts } from "@/lib/productStore";
 import { Product } from "@/types/product.types";
 
-const API = process.env.NEXT_PUBLIC_SHOPLENS_API || "http://localhost:8000";
+const API = process.env.NEXT_PUBLIC_SHOPLENS_API || "http://meta-1-x9qz.onrender.com";
 
 const CATEGORIES = ["Top", "Bottom", "Dress", "Accessory"];
 

@@ -23,7 +23,7 @@ interface Props {
   }) => void;
 }
 
-const API = process.env.NEXT_PUBLIC_SHOPLENS_API || "http://localhost:8000";
+const API = process.env.NEXT_PUBLIC_SHOPLENS_API || "http://meta-1-x9qz.onrender.com";
 
 export default function AIAssistant({ onProductReady }: Props) {
   const [input, setInput]     = useState("");

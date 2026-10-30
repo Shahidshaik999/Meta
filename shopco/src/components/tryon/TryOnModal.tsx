@@ -3,7 +3,7 @@
 import { useState, useCallback, useEffect } from "react";
 import { useDropzone } from "react-dropzone";
 
-const API = process.env.NEXT_PUBLIC_SHOPLENS_API || "http://localhost:8000";
+const API = process.env.NEXT_PUBLIC_SHOPLENS_API || "http://meta-1-x9qz.onrender.com";
 
 interface FitData {
   fit_score: number;
