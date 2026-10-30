@@ -1,11 +1,11 @@
 [build]
   base    = "shopco"
   command = "npm install --legacy-peer-deps && npm run build"
-  publish = "shopco/.next"
+  publish = ".next"
 
 [build.environment]
-  NODE_VERSION            = "18"
-  NEXT_PUBLIC_SHOPLENS_API = "https://shoplens-2.onrender.com"
+  NODE_VERSION             = "20"
+  NEXT_PUBLIC_SHOPLENS_API = "https://meta-1-x9qz.onrender.com"
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"
