@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: metashop-frontend
+    runtime: node
+    rootDir: shopco
+    buildCommand: npm install --legacy-peer-deps && npm run build
+    startCommand: npm start
+    envVars:
+      - key: NEXT_PUBLIC_SHOPLENS_API
+        value: https://shoplens-2.onrender.com
+      - key: NODE_VERSION
+        value: 18.20.0
