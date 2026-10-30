@@ -27,24 +27,12 @@ app = FastAPI(
     version="1.0.0"
 )
 
-# CORS — allow local dev + Vercel production frontend
-ALLOWED_ORIGINS = [
-    "http://localhost:3000",
-    "http://localhost:3001",
-    "https://*.vercel.app",
-]
-
-# Add custom frontend URL from env if set (set this in Render dashboard)
-frontend_url = os.getenv("FRONTEND_URL", "")
-if frontend_url:
-    ALLOWED_ORIGINS.append(frontend_url)
-
+# CORS — allow everything for hackathon demo
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=ALLOWED_ORIGINS,
-    allow_origin_regex=r"https://.*\.vercel\.app",
-    allow_credentials=True,
-    allow_methods=["GET", "POST", "OPTIONS"],
+    allow_origins=["*"],
+    allow_credentials=False,
+    allow_methods=["*"],
     allow_headers=["*"],
 )
 
